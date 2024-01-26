@@ -21,8 +21,11 @@ print:
 
 
 print_char:
-    mov ah, 0ah
+    mov ah, 0x0E     ; Function code for teletype output
+    mov bh, 0        ; Page number
     int 0x10
+    ret
+
 
 message: db 'Hello World', 0
 
